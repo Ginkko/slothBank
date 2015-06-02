@@ -7,7 +7,9 @@ function Account(accountName, balance) {
 Account.prototype.modifyBalance = function(amount, isDeposit) {
   if(isDeposit) {
     this.balance += amount;
+    this.ledger.push(amount);
   } else {
     this.balance -= amount;
+    this.ledger.push(-amount);
   }
 }
