@@ -14,6 +14,13 @@ Account.prototype.modifyBalance = function(amount, isDeposit) {
   }
 }
 
+var clearFields = function() {
+  $("input#new-accountName").val("");
+  $("input#new-balance").val("");
+  $("input#deposit").val("");
+  $("input#withdraw").val("");
+}
+
 var accounts = []
 var index = 0
 $(document).ready(function() {
@@ -33,7 +40,7 @@ $(document).ready(function() {
      account.ledger.forEach(function(entry) {
           $("ul#ledger").append("<li>" + entry + "</li>");
         });
-    $("#accountDetails").delay(1000).fadeIn("slow");
+    $("#accountDetails").delay(4000).fadeIn("slow");
   });
 
   $("span#modifyBalance").on('click', function() {
@@ -41,7 +48,7 @@ $(document).ready(function() {
     var withdraw = parseInt($("input#withdraw").val());
     var account = accounts[index];
     if(withdraw) {
-       account.modifyBalance(withdraw, false);
+      account.modifyBalance(withdraw, false);
     }
 
     if(deposit) {
@@ -53,19 +60,26 @@ $(document).ready(function() {
     $("#accountInfo").append('<h2>Account Name: </h2><br><p>' + account.accountName + '</p><br><h2>Balance: </h2><br><p>$' + account.balance + '</p>' );
     $("#accountHistory").append('<h2>Account History: </h2><br><ul id="ledger"></ul>')
      account.ledger.forEach(function(entry) {
-      $("ul#ledger").append("<li>" + entry + "</li>");
+      if (entry > 0) {
+        $("ul#ledger").append("<li class='deposit'>$" + entry + "</li>");
+      } else {
+        $("ul#ledger").append("<li class='withdraw'>$" + entry + "</li>");
+      }
     });
+
+    clearFields();
   });
 
   $("span#back").on('click', function() {
-  $("ul#accounts").empty();
-    for (var i = 0; i < accounts.length; i++ ) {
-      $("ul#accounts").append("<li><span class='account' id='" + index + "'>" + accounts[i].accountName + "</span></li>");
-    }
+    $("ul#accounts").empty();
+      for (var i = 0; i < accounts.length; i++ ) {
+        $("ul#accounts").append("<li><span class='account' id='" + index + "'>" + accounts[i].accountName + "</span></li>");
+      }
 
-  $("#accountDetails").fadeOut("slow");
-  $(".new-account").delay(1000).fadeIn("slow");
-
+    $("#accountDetails").fadeOut("slow");
+    $(".new-account").delay(4000).fadeIn("slow");
+    $("#accountList").delay(6000).fadeIn("slow");
+    clearFields();
   });
 
   $("#accountList").on('click', '.account', function() {
@@ -77,9 +91,13 @@ $(document).ready(function() {
     $("#accountInfo").append('<h2>Account Name: </h2><br><p>' + account.accountName + '</p><br><h2>Balance: </h2><br><p>$' + account.balance + '</p>' );
     $("#accountHistory").empty();
     $("#accountHistory").append('<h2>Account History: </h2><br><ul id="ledger"></ul>')
-     account.ledger.forEach(function(entry) {
-          $("ul#ledger").append("<li>" + entry + "</li>");
-        });
-    $("#accountDetails").delay(1000).fadeIn("slow");
+    account.ledger.forEach(function(entry) {
+      if (entry > 0) {
+        $("ul#ledger").append("<li class='deposit'>$" + entry + "</li>");
+      } else {
+        $("ul#ledger").append("<li class='withdraw'>$" + entry + "</li>");
+      }
+    });
+    $("#accountDetails").delay(4000).fadeIn("slow");
   })
 });

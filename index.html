@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:700' rel='stylesheet' type='text/css'>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Banker O Rama</title>
+    <title>Gentleman Sloth Bank</title>
   </head>
   <body>
     <div class="container">
-      <h1>Banker O Rama</h1>
+      <h1>Gentleman Sloth Bank</h1>
+      <h5 class="text-center">Relax, your money will be here when you get back.</h5>
       <div class="col-md-6 col-md-offset-3 row">
         <div class="new-account">
         <form id="new-account">
@@ -23,40 +25,42 @@
           </div>
           <button type="submit" class="btn btn-success center-block">Submit</button>
         </form>
-        <h3>Accounts:</h3>
         <div id= "accountList">
+          <h3>Accounts:</h3>
           <ul id="accounts"></ul>
         </div>
       </div>
     </div>
-
-      <div id="accountDetails">
-        <br>
-        <div id="accountInfo" class="col-md-6">
+    <div id="accountDetails">
+      <br>
+      <div class="row">
+        <div id="accountInfo" class="col-md-5 panel">
         </div>
-        <div id="accountHistory" class="col-md-6">
+        <div id="accountHistory" class="col-md-5 col-md-offset-2 panel">
         </div>
-        <div class="row form-bottom">
-          <br>
-          <form id="modifyBalance">
-            <div class="col-md-4">
-            <div class="form-group">
-              <label for="deposit">Deposit:</label>
-              <input class="form-control" type="number" id="deposit">
-              <input type="hidden" id="isDeposit" value=true>
-            </div>
-            <span class="btn btn-success center-block" id="modifyBalance">Submit</span>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="row panel center-block col-md-4 col-md-offset-6">
+        <form id="modifyBalance">
+          <div class="form-group">
+            <label for="deposit">Deposit:</label>
+            <input class="form-control" type="number" id="deposit">
+            <input type="hidden" id="isDeposit" value=true>
           </div>
-          <div class="col-md-4">
-            <div class="form-group">
-              <label for="withdraw">Withdraw:</label>
+          <div class="form-group">
+            <label for="withdraw">Withdraw:</label>
               <input class="form-control" type="number" id="withdraw">
               <input type="hidden" id="isDeposit" value=false>
-            </div>
-          </form>
-          <span class="btn btn-primary" id="back">Back</span>
+            <br>
+            <span class="btn btn-success" id="modifyBalance">Submit</span>
+            <br>
+            <br>
+            <span class="btn btn-primary" id="back">Back</span>
+          </div>
         </div>
-        </div>
+      </form>
       </div>
     </div>
   </body>

@@ -7,14 +7,36 @@
   color: #0088cc;
 }
 
-#accounts:hover {
+.account:hover {
   text-decoration: underline;
 }
 
+body {
+  font-family: 'Libre Baskerville', serif;
+  background-image: url("../img/background.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#deposit {
+  color: green;
+}
+
+#withdraw {
+  color: red;
+}
+
+.deposit {
+  color: green;
+}
+
+.withdraw {
+  color: red;
+}
 h1 {
   padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid grey;
   text-align: center;
 }
 
@@ -22,7 +44,17 @@ h1 {
   display: none;
 }
 
+#accountList {
+  display:none;
+}
+
 .form-bottom {
   position: absolute;
   bottom: 30px;
+}
+
+.panel
+{
+  background: rgba(255, 255, 255, 0.5);
+
 }
