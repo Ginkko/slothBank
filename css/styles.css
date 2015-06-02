@@ -21,3 +21,8 @@ h1 {
 #accountDetails {
   display: none;
 }
+
+.form-bottom {
+  position: absolute;
+  bottom: 30px;
+}

@@ -29,7 +29,22 @@
         </div>
         <div id="accountHistory" class="col-md-6">
         </div>
+        <div class="row form-bottom">
+          <form id="modifyBalance">
+            <div class="form-group">
+              <label for="deposit">Deposit:</label>
+              <input class="form-control" type="number" id="deposit">
+              <input type="hidden" id="isDeposit" value=true>
+            </div>
+            <span class="btn btn-success center-block">Submit</span>
 
+            <div class="form-group">
+              <label for="withdraw">Withdraw:</label>
+              <input class="form-control" type="number" id="withdraw">
+              <input type="hidden" id="isDeposit" value=false>
+            </div>
+            <span class="btn btn-success center-block">Submit</span>
+          </form>
         </div>
       </div>
     </div>
