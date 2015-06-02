@@ -10,7 +10,8 @@
   <body>
     <div class="container">
       <h1>Banker O Rama</h1>
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-6 col-md-offset-3 row">
+        <div class="new-account">
         <form id="new-account">
           <div class="form-group">
             <label for="new-accountName">Account Name</label>
@@ -22,7 +23,13 @@
           </div>
           <button type="submit" class="btn btn-success center-block">Submit</button>
         </form>
+        <h3>Accounts:</h3>
+        <div id= "accountList">
+          <ul id="accounts"></ul>
+        </div>
       </div>
+    </div>
+
       <div id="accountDetails">
         <br>
         <div id="accountInfo" class="col-md-6">
@@ -30,21 +37,25 @@
         <div id="accountHistory" class="col-md-6">
         </div>
         <div class="row form-bottom">
+          <br>
           <form id="modifyBalance">
+            <div class="col-md-4">
             <div class="form-group">
               <label for="deposit">Deposit:</label>
               <input class="form-control" type="number" id="deposit">
               <input type="hidden" id="isDeposit" value=true>
             </div>
-            <span class="btn btn-success center-block">Submit</span>
-
+            <span class="btn btn-success center-block" id="modifyBalance">Submit</span>
+          </div>
+          <div class="col-md-4">
             <div class="form-group">
               <label for="withdraw">Withdraw:</label>
               <input class="form-control" type="number" id="withdraw">
               <input type="hidden" id="isDeposit" value=false>
             </div>
-            <span class="btn btn-success center-block">Submit</span>
           </form>
+          <span class="btn btn-primary" id="back">Back</span>
+        </div>
         </div>
       </div>
     </div>
